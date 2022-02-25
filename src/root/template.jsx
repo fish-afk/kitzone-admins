@@ -3,7 +3,6 @@ import DataService from './Dataworker'
 
 export default function Template(props) {
 
-
   const completed_logic = (stat, order, index) => {
     if(stat == "Completed") {
       return(<h1>Completed</h1>);
@@ -17,12 +16,13 @@ export default function Template(props) {
       return(props.orders.map((order, index)=> (
         <div key={index} id={props.uid}>
         <li id={index} key={index}>{order.name},{order.description},qty:{order.quantity.$numberInt}</li>
+        <li key={index}>Customers contact{order.Contact}</li>
         {completed_logic(order.order_status, order, index)}
         </div>
       )));
   
     }else{
-      return(<h1>This user has no orders</h1>);
+      return(<h1 className="text-warning">This user has no orders</h1>);
     }
   }
 
