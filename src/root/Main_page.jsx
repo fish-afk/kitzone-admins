@@ -30,7 +30,7 @@ export default function Main_page() {
 
   return (
     <div className="mt-5 container bg-dark text-white">
-      <button onClick={getData} className="btn btn-primary">Refresh data</button>
+      <button id="refresher" onClick={getData} className="btn btn-primary">Refresh data</button>
       <div className="row bg-success">
 
       {setTemplate()}
